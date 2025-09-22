@@ -10,7 +10,7 @@ public class Rugby extends SportsHouseholds {
 	@Override
 	public Sports getPreference() {
 		// TODO Auto-generated method stub
-		return null;
+		return Sports.RUGBY;
 	}
 
 	@Override

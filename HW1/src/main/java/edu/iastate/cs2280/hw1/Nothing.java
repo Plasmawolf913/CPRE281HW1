@@ -8,7 +8,7 @@ public class Nothing extends Household {
 	}
 	
 	public Sports getPreference() {
-		return Sports.BASKETBALL;
+		return null;
 	}
 	
 	public Household next(NeighborhoodGrid newGrid, int month) {
