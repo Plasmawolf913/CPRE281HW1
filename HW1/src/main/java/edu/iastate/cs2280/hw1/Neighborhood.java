@@ -21,6 +21,11 @@ public class Neighborhood {
      * @param currentMonth the current month of the simulation, used for household updates
      */
     public static void updateGrid(NeighborhoodGrid oldGrid, NeighborhoodGrid newGrid, int currentMonth) {
+    	for (int i = 0; i < oldGrid.getSize(); i++) { 		//for loops are prob wrong
+    		for(int j = 0; j < oldGrid.getSize(); j++) {
+    			newGrid.grid[i][j] = oldGrid.grid[i][j].next(newGrid, currentMonth);
+    		}
+    	}
     }
 
     /**

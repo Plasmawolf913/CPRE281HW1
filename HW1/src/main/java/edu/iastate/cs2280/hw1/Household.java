@@ -48,7 +48,7 @@ public abstract class Household {
         this.column = column;
     }
 
-    /**
+    /*
      * Surveys the preferences of neighboring households within the neighborhood grid.
      * Each neighboring household's preference is counted and stored in the 'households' array,
      * where each index corresponds to a preference from the Sports enumeration.
@@ -56,7 +56,12 @@ public abstract class Household {
      * @param households An array to store the aggregated counts of sports preferences for neighboring households.
      */
     protected void survey(int households[]) {
-    	
+    	for(int i = 0; i < 2; i++){ 				//might have to change for loops??
+    		for(int j = 0; j < 2; j++) {
+    			Sports s = neighborhoodGrid.grid[i][j].getPreference();
+    			households[s.ordinal()]++;
+    		}
+    	}
     }
 
     /**
