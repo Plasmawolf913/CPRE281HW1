@@ -30,9 +30,6 @@ public class Neighborhood {
     		}
     	}
     	
-    	
-    
-
     }
 
     /**
@@ -48,12 +45,21 @@ public class Neighborhood {
     public static void main(String[] args) throws FileNotFoundException, ParseException, InputMismatchException {
         System.out.println("Neighborhood Sports Preferences");
         System.out.println("===============================");
-        System.out.println("Keys: 1 (random grid); 2 (file input); 3 (exit)");
         Scanner scan = new Scanner(System.in);
+        System.out.println("Keys: 1 (random grid); 2 (file input); 3 (exit)");
+        String initialInput = scan.next();
+        if(initialInput == "1") {
+        	
+        }else if(initialInput == "2") {
+        	
+        }else if(initialInput == "3") {
+        	System.exit(0);
+        }
         
+//        System.out.println("Simulation Number: ");
+        System.out.println("Enter grid width: ");
         
-        System.out.println("Enter grid width: ");
-        System.out.println("Enter grid width: ");
+        System.out.println("Enter the number of months: ");
         
         
 

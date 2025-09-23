@@ -22,14 +22,31 @@ public class Baseball extends SportsHouseholds {
 	    
 	    int footballHouseholds = households[Sports.FOOTBALL.ordinal()];
 	    
+	    if(this.interestLevel > 9) {
+	    	return new Nothing(neighborhoodGrid, row, column);
+	    	
+	    }else if(households[Sports.SOCCER.ordinal()] > 3){
+	    	return new Soccer(neighborhoodGrid, row, column, 0);
+	    	
+	    }else if(households[Sports.BASEBALL.ordinal()] < 2) {
+	    	return new Rugby(neighborhoodGrid, row, column, 0);
+	    	
+	    }else if(households[Sports.BASEBALL.ordinal()] + households[Sports.SOCCER.ordinal()] > 5) {
+	    	return new Nothing(neighborhoodGrid, row, column);
+	    	
+	    }else if(households[Sports.FOOTBALL.ordinal()] > (2 * households[Sports.BASEBALL.ordinal()])) {
+	    	return new Football(neighborhoodGrid, row, column, 0);
+	    	
+	    }else {
+	    	this.interestLevel++;
+	    }
 	    
-	    //then do fucking if else stuff
 	    
 	    return null;
 	}
 
 	public String toString() {
-		return this.getPreference() + "" + this.getInterest() + " ";
+		return  "A" + this.getInterest() + " ";
 	}
 	
 }

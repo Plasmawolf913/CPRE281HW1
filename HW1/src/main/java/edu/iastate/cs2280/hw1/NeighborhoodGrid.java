@@ -166,15 +166,14 @@ public class NeighborhoodGrid {
      * @return String
      */
     public String toString() {
-    	
+    	String s = "";
     	for(int r = 0; r < grid.length; r++) {
     		for(int c = 0; c < grid[0].length; c++) {
-    			
-    			
+    			s += grid[r][c].toString();
     		}
     	}
     	
-    	return "yo";
+    	return s;
     }
 
     /**
