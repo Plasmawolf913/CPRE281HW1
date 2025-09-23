@@ -51,13 +51,13 @@ public class Neighborhood {
         int count = 0;
         while(quit == 0) {
         System.out.println("Keys: 1 (random grid); 2 (file input); 3 (exit)");
-        String initialInput = scan.next();
+        int initialInput = scan.nextInt();
         
-        if(initialInput == "1") {
+        if(initialInput == 1) {
         	System.out.println("Enter grid width: "); //need to do inputmismatch + other exceptions
         	int width = scan.nextInt();
             
-        	System.out.println("Simulation Number: " + count + " Random Grid");
+        	System.out.println("Simulation Number: " + count + " -> Random Grid");
             System.out.println("Enter the number of months: ");
             int numMonths = scan.nextInt();
             
@@ -74,14 +74,14 @@ public class Neighborhood {
         	}
         	
         	
-        }else if(initialInput == "2") {
+        }else if(initialInput == 2) {
         	System.out.println("Please enter the name of your file: ");
         	String inputFileName = scan.next();
         	
         	System.out.println("Enter grid width: "); //need to do inputmismatch + other exceptions
         	int width = scan.nextInt();
         	
-        	System.out.println("Simulation Number: " + count + " File Input");
+        	System.out.println("Simulation Number: " + count + " -> File Input");
         	System.out.println("Enter the number of months: ");
             int numMonths = scan.nextInt();
         	
@@ -96,7 +96,7 @@ public class Neighborhood {
         		neighborhoodGrid.toString();
         	}
         	
-        }else if(initialInput == "3") {
+        }else if(initialInput == 3) {
         	quit = 1;
         }
         
