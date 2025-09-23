@@ -19,10 +19,9 @@ public class Baseball extends SportsHouseholds {
 	    int[] households = new int[Sports.values().length];
 
 	    survey(households);
+	   
 	    
-	    int footballHouseholds = households[Sports.FOOTBALL.ordinal()];
-	    
-	    if(this.interestLevel > 9) {
+	    if(this.interestLevel > MAX_INTEREST) {
 	    	return new Nothing(neighborhoodGrid, row, column);
 	    	
 	    }else if(households[Sports.SOCCER.ordinal()] > 3){
@@ -39,10 +38,9 @@ public class Baseball extends SportsHouseholds {
 	    	
 	    }else {
 	    	this.interestLevel++;
+	    	return this;
 	    }
 	    
-	    
-	    return null;
 	}
 
 	public String toString() {

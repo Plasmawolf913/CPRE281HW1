@@ -16,10 +16,30 @@ public class Rugby extends SportsHouseholds {
 	@Override
 	public Household next(NeighborhoodGrid newGrid, int month) {
 		// TODO Auto-generated method stub
-		return null;
+		int[] households = new int[Sports.values().length];
+
+	    survey(households);
+	   
+	    
+	    if(this.interestLevel > MAX_INTEREST) {
+	    	return new Nothing(neighborhoodGrid, row, column);
+	    	
+	    }else if(households[Sports.FOOTBALL.ordinal()] + households[Sports.SOCCER.ordinal()] >= 8){
+	    	return new Soccer(neighborhoodGrid, row, column, 2);
+	    	
+	    }else if(households[Sports.BASEBALL.ordinal()] > (2 * households[Sports.BASKETBALL.ordinal()])) {
+	    	return new Baseball(neighborhoodGrid, row, column, 4);
+	    	
+	    }else if(households[Sports.RUGBY.ordinal()] < 2) {
+	    	return new Football(neighborhoodGrid, row, column, 0);
+	    	
+	    }else {
+	    	this.interestLevel++;
+	    	return this;
+	    }
 	}
 
 	public String toString() {
-		return this.getPreference() + "" + this.getInterest() + " ";
+		return "R" + this.getInterest() + " ";
 	}
 }

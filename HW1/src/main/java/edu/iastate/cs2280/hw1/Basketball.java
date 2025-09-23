@@ -16,10 +16,33 @@ public class Basketball extends SportsHouseholds {
 	@Override
 	public Household next(NeighborhoodGrid newGrid, int month) {
 		// TODO Auto-generated method stub
-		return null;
+		 int[] households = new int[Sports.values().length];
+
+	    survey(households);
+	   
+	    
+	    if(this.interestLevel > MAX_INTEREST) {
+	    	return new Nothing(neighborhoodGrid, row, column);
+	    	
+	    }else if(households[Sports.FOOTBALL.ordinal()] > 5){
+	    	return new Football(neighborhoodGrid, row, column, 2);
+	    	
+	    }else if(households[Sports.SOCCER.ordinal()] >= 2) {
+	    	return new Soccer(neighborhoodGrid, row, column, 0);
+	    	
+	    }else if(households[Sports.BASKETBALL.ordinal()] < 2) {
+	    	return new Everything(neighborhoodGrid, row, column);
+	    	
+	    }else if(households[Sports.FOOTBALL.ordinal()] + households[Sports.BASEBALL.ordinal()] + households[Sports.BASKETBALL.ordinal()] > 6) {
+	    	return new Everything(neighborhoodGrid, row, column);
+	    	
+	    }else {
+	    	this.interestLevel++;
+	    	return this;
+	    }
 	}
 	
 	public String toString() {
-		return this.getPreference() + "" + this.getInterest() + " ";
+		return  "B" + this.getInterest() + " ";
 	}
 }
