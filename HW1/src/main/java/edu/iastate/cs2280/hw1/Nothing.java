@@ -16,5 +16,9 @@ public class Nothing extends Household {
 		
 	}
 	
+	public String toString() {
+		return this.getPreference() + " ";
+	}
+	
 	
 }

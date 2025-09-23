@@ -28,4 +28,8 @@ public class Baseball extends SportsHouseholds {
 	    return null;
 	}
 
+	public String toString() {
+		return this.getPreference() + "" + this.getInterest() + " ";
+	}
+	
 }

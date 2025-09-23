@@ -19,4 +19,7 @@ public class Rugby extends SportsHouseholds {
 		return null;
 	}
 
+	public String toString() {
+		return this.getPreference() + "" + this.getInterest() + " ";
+	}
 }

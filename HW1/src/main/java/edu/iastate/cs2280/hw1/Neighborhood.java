@@ -21,6 +21,16 @@ public class Neighborhood {
      * @param currentMonth the current month of the simulation, used for household updates
      */
     public static void updateGrid(NeighborhoodGrid oldGrid, NeighborhoodGrid newGrid, int currentMonth) {
+    	for(int r = 0; r < oldGrid.grid.length; r++) {
+    		for(int c = 0; c < oldGrid.grid[0].length; c++) {
+    			
+    			newGrid.grid[r][c] = oldGrid.grid[r][c].next(newGrid, currentMonth); //why pass new grid in??? maybe that happens in next()
+    			
+    		}
+    	}
+    	
+    	
+    
     }
 
     /**

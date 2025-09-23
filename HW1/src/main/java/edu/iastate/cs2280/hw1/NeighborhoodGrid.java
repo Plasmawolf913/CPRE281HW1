@@ -83,6 +83,14 @@ public class NeighborhoodGrid {
      * @return String
      */
     public String toString() {
+    	
+    	for(int r = 0; r < grid.length; r++) {
+    		for(int c = 0; c < grid[0].length; c++) {
+    			
+    			
+    		}
+    	}
+    	
     	return "yo";
     }
 

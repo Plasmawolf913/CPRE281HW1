@@ -19,4 +19,7 @@ public class Football extends SportsHouseholds {
 		return null;
 	}
 
+	public String toString() {
+		return this.getPreference() + "" + this.getInterest() + " ";
+	}
 }

@@ -18,5 +18,9 @@ public class Soccer extends SportsHouseholds {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public String toString() {
+		return this.getPreference() + "" + this.getInterest() + " ";
+	}
 
 }
