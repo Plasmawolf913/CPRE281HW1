@@ -50,7 +50,14 @@ public class Neighborhood {
         String initialInput = scan.next();
         if(initialInput == "1") {
         	
+        	NeighborhoodGrid neighborhoodGrid = new NeighborhoodGrid(15);
+        	neighborhoodGrid.randomInit();
+        	
         }else if(initialInput == "2") {
+        	System.out.println("Please enter the name of your file: ");
+        	String inputFileName = scan.next();
+        	
+        	NeighborhoodGrid neighborhoodGrid = new NeighborhoodGrid(inputFileName);
         	
         }else if(initialInput == "3") {
         	System.exit(0);

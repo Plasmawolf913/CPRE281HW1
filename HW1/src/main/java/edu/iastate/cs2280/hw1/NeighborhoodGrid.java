@@ -154,7 +154,55 @@ public class NeighborhoodGrid {
      * Soccer, Everything, Nothing, or Rugby) based on a random selection.
      */
     public void randomInit() {
+    	for(int r = 0; r < size; r++) {
+    		for(int c = 0; c < size; c++) {
+    			
+    			Random rand = new Random(7);
+    			Random randinterest = new Random(Household.MAX_INTEREST);
+    		
+    			int pick = rand.nextInt();
+    			int lvl = rand.nextInt();
+    			
+    			
+    			switch (pick) {
+                case 0: {
+                    
+                    grid[r][c] = new Baseball(this, r, c, lvl);
+                    break;
+                }
+                case 1: {
+                    
+                    grid[r][c] = new Basketball(this, r, c, lvl);
+                    break;
+                }
+    			
+                case 2:{
+                    grid[r][c] = new Everything(this, r, c);
+                    break;
+    			}  
+                case 3: {
+                    ;
+                    grid[r][c] = new Football(this, r, c, lvl);
+                    break;
+                }
+                case 4: {
+                    grid[r][c] = new Nothing(this, r, c);
+                    break;
+                }
+                case 5: {
+                    
+                    grid[r][c] = new Rugby(this, r, c, lvl);
+                    break;
+                }
+                case 6: {
+                    
+                    grid[r][c] = new Soccer(this, r, c, lvl);
+                    break;
+                }
+    		}
+    	}
     }
+   }
 
     /**
      * Output the Neighborhood grid.
