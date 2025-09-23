@@ -46,28 +46,67 @@ public class Neighborhood {
         System.out.println("Neighborhood Sports Preferences");
         System.out.println("===============================");
         Scanner scan = new Scanner(System.in);
+        
+        int quit = 0;
+        int count = 0;
+        while(quit == 0) {
         System.out.println("Keys: 1 (random grid); 2 (file input); 3 (exit)");
         String initialInput = scan.next();
+        
         if(initialInput == "1") {
+        	System.out.println("Enter grid width: "); //need to do inputmismatch + other exceptions
+        	int width = scan.nextInt();
+            
+        	System.out.println("Simulation Number: " + count + " Random Grid");
+            System.out.println("Enter the number of months: ");
+            int numMonths = scan.nextInt();
+            
         	
-        	NeighborhoodGrid neighborhoodGrid = new NeighborhoodGrid(15);
+        	NeighborhoodGrid neighborhoodGrid = new NeighborhoodGrid(width);
         	neighborhoodGrid.randomInit();
+        	
+        	neighborhoodGrid.toString();
+        	for(int i = 1; i <= numMonths; i++) {
+        		NeighborhoodGrid newGrid = new NeighborhoodGrid(width);
+        		updateGrid(neighborhoodGrid, newGrid, i);
+        		System.out.println("Updated Grid for month " + i);
+        		neighborhoodGrid.toString();
+        	}
+        	
         	
         }else if(initialInput == "2") {
         	System.out.println("Please enter the name of your file: ");
         	String inputFileName = scan.next();
         	
+        	System.out.println("Enter grid width: "); //need to do inputmismatch + other exceptions
+        	int width = scan.nextInt();
+        	
+        	System.out.println("Simulation Number: " + count + " File Input");
+        	System.out.println("Enter the number of months: ");
+            int numMonths = scan.nextInt();
+        	
         	NeighborhoodGrid neighborhoodGrid = new NeighborhoodGrid(inputFileName);
         	
+        	System.out.println("Initial Grid:");
+        	neighborhoodGrid.toString();
+        	for(int i = 1; i <= numMonths; i++) {
+        		NeighborhoodGrid newGrid = new NeighborhoodGrid(width);
+        		updateGrid(neighborhoodGrid, newGrid, i);
+        		System.out.println("Updated Grid for month " + i);
+        		neighborhoodGrid.toString();
+        	}
+        	
         }else if(initialInput == "3") {
-        	System.exit(0);
+        	quit = 1;
         }
         
-//        System.out.println("Simulation Number: ");
-        System.out.println("Enter grid width: ");
+
+
         
-        System.out.println("Enter the number of months: ");
         
+        
+        count++;
+        }
         
 
     }
