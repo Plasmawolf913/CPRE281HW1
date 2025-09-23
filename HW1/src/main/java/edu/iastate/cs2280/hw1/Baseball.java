@@ -10,13 +10,26 @@ public class Baseball extends SportsHouseholds {
 	@Override
 	public Sports getPreference() {
 		// TODO Auto-generated method stub
-		return null;
+		return Sports.BASEBALL;
 	}
 
 	@Override
 	public Household next(NeighborhoodGrid newGrid, int month) {
 		// TODO Auto-generated method stub
-		return null;
+	    int[] households = new int[Sports.values().length];
+
+	    survey(households);
+	    
+	    int footballHouseholds = households[Sports.FOOTBALL.ordinal()];
+	    
+	    
+	    //then do fucking if else stuff
+	    
+	    return null;
 	}
 
+	public String toString() {
+		return this.getPreference() + "" + this.getInterest() + " ";
+	}
+	
 }

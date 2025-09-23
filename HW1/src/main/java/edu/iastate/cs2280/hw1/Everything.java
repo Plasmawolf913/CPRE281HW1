@@ -22,5 +22,7 @@ public class Everything extends Household {
 		
 	}
 	
-	
+	public String toString() {
+		return this.getPreference() + " ";
+	}
 }

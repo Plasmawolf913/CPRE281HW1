@@ -56,10 +56,23 @@ public abstract class Household {
      * @param households An array to store the aggregated counts of sports preferences for neighboring households.
      */
     protected void survey(int households[]) {
-    	for(int i = 0; i < 2; i++){ 				//might have to change for loops??
-    		for(int j = 0; j < 2; j++) {
-    			Sports s = neighborhoodGrid.grid[i][j].getPreference();
-    			households[s.ordinal()]++;
+
+    	//double for loop, check its not out the grid and continue if so, store with ordinal
+    	for(int r = row - 1; r <= row + 1; r++) {
+    		for(int c = column - 1; c <= column + 1; c++) {
+    			//if outside grid then continue
+    			  // skip out-of-bounds
+                if (r < 0 || r >= neighborhoodGrid.grid.length || 
+                    c < 0 || c >= neighborhoodGrid.grid[0].length) {
+                    continue;
+                }
+    			
+    			
+    			Sports x = neighborhoodGrid.grid[r][c].getPreference();
+    			
+    			households[x.ordinal()]++;
+    			
+
     		}
     	}
     }

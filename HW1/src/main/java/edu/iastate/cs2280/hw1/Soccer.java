@@ -10,13 +10,17 @@ public class Soccer extends SportsHouseholds {
 	@Override
 	public Sports getPreference() {
 		// TODO Auto-generated method stub
-		return null;
+		return Sports.SOCCER;
 	}
 
 	@Override
 	public Household next(NeighborhoodGrid newGrid, int month) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public String toString() {
+		return this.getPreference() + "" + this.getInterest() + " ";
 	}
 
 }
