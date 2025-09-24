@@ -27,7 +27,7 @@ public class Football extends SportsHouseholds {
 			}
 		}
 		
-		if(this.interestLevel > MAX_INTEREST) {
+		if(this.interestLevel >= MAX_INTEREST) {
 	    	return new Nothing(neighborhoodGrid, row, column);
 	    	
 	    }else if(households[Sports.BASEBALL.ordinal()] + households[Sports.BASKETBALL.ordinal()] + households[Sports.FOOTBALL.ordinal()] > 7){

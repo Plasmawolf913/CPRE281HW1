@@ -21,7 +21,7 @@ public class Baseball extends SportsHouseholds {
 	    survey(households);
 	   
 	    
-	    if(this.interestLevel > MAX_INTEREST) {
+	    if(this.interestLevel >= MAX_INTEREST) {
 	    	return new Nothing(neighborhoodGrid, row, column);
 	    	
 	    }else if(households[Sports.SOCCER.ordinal()] > 3){
