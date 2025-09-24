@@ -67,14 +67,27 @@ public class Neighborhood {
         	
         	System.out.println("Initial Grid: ");
         	System.out.println(nbgrid.toString());
+        	NeighborhoodGrid oldGrid = nbgrid;
         	
         	for(int i = 1; i <= numMonths; i++) {
+        		
         		NeighborhoodGrid newGrid = new NeighborhoodGrid(width);
-        		updateGrid(nbgrid, newGrid, i);
+        		updateGrid(oldGrid, newGrid, i);
         		System.out.println("Updated Grid for month " + i);
-        		System.out.println(nbgrid.toString());
+        		System.out.println(newGrid.toString());
+        		oldGrid = newGrid;
+        		
+        		if(i == numMonths) {
+        			System.out.println("Final Grid: \n" + newGrid.toString());
+        		}
+        		
+        		newGrid = null;
+        		
         		
         	}
+        	
+        	
+
         	
         	
         }else if(initialInput == 2) {
@@ -91,13 +104,23 @@ public class Neighborhood {
         	
         	System.out.println("Initial Grid:");
         	System.out.println(neighborhoodGrid.toString());
+        	NeighborhoodGrid oldGrid = neighborhoodGrid;
         	
         	for(int i = 1; i <= numMonths; i++) {
         		NeighborhoodGrid newGrid = new NeighborhoodGrid(neighborhoodGrid.grid.length);
-        		updateGrid(neighborhoodGrid, newGrid, i);
+        		updateGrid(oldGrid, newGrid, i);
         		System.out.println("Updated Grid for month " + i);
-        		System.out.println(neighborhoodGrid.toString());
+        		System.out.println(newGrid.toString());
+        		oldGrid = newGrid;
+        		
+        		if(i == numMonths) {
+        			System.out.println("Final Grid: \n" + newGrid.toString());
+        		}
+        		
+        		newGrid = null;
         	}
+        	
+        	
         	
         }else if(initialInput == 3) {
         	quit = 1;

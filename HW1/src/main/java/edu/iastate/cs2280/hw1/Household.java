@@ -66,13 +66,19 @@ public abstract class Household {
                     c < 0 || c >= neighborhoodGrid.grid[0].length) {
                     continue;
                 }
+                else if (r > row+1 || r < row-1) {
+                	continue;
+                }
+                else if (c > column + 1 || c < column - 1) {
+                	continue;
+                }
     			
     			
     			Sports x = neighborhoodGrid.grid[r][c].getPreference();
     			
     			households[x.ordinal()]++;
     			
-
+//big problem::: all grid go to f0 so could be survey method or the update grid method
     		}
     	}
     }

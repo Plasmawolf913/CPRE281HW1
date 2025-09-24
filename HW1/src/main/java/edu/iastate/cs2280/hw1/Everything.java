@@ -17,7 +17,9 @@ public class Everything extends Household {
 	public Household next(NeighborhoodGrid newGrid, int month) {
 		
 		int[] households = new int[Sports.values().length];
-
+		
+		
+		
 	    survey(households);
 	   
 	    
