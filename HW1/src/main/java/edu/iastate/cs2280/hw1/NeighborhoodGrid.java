@@ -38,48 +38,40 @@ public class NeighborhoodGrid {
      *                               contains invalid household specifications
      */
     public NeighborhoodGrid(String inputFileName) throws FileNotFoundException, ParseException {
-    	ArrayList<String[]> rows = new ArrayList<>();
-        try (Scanner sc = new Scanner(new File(inputFileName))) {
-            while (sc.hasNextLine()) {
-                String line = sc.nextLine().trim();
-                if (line.isEmpty()) continue;
-                // tokens are space-separated like: A1  E   B3  N
+
+    	
+
+    	// ---------- First pass: count rows and cols ----------
+        Scanner counter = new Scanner(new File(inputFileName));
+        int rows = 0;
+        int cols = -1;
+
+        while (counter.hasNextLine()) {
+            String line = counter.nextLine().trim();
+            if (!line.isEmpty()) {
                 String[] tokens = line.split("\\s+");
-                rows.add(tokens);
+                if (cols == -1) {
+                    cols = tokens.length;  // set column count from first line
+                }
+                rows++;
             }
         }
+        counter.close();
 
-        if (rows.isEmpty()) {
-            throw new ParseException("Input file is empty.", 0);
-        }
-
-        // Determine size and validate square grid
-          int n = rows.get(0).length;
-//        if (n == 0) throw new ParseException("No tokens found in first line.", 0);
-//        if (rows.size() != n) {
-//            throw new ParseException("Grid must be square: got " + rows.size() + " rows and " + n + " columns.", 0);
-//        }
-//        for (int i = 1; i < rows.size(); i++) {
-//            if (rows.get(i).length != n) {
-//                throw new ParseException("Row " + i + " has " + rows.get(i).length + " tokens; expected " + n + ".", i);
-//            }
-//        }
-
-        this.size = n;
         
+        
+        grid = new Household[rows][cols];
+        // ---------- Second pass: actually read into grid ----------
+        Scanner sc = new Scanner(new File(inputFileName));
 
-        // Fill grid
-        for (int r = 0; r < n; r++) {
-            String[] tokens = rows.get(r);
-            for (int c = 0; c < n; c++) {
-                String t = tokens[c];
-                if (t.length() < 1) {
-                    throw new ParseException("Empty token at (" + r + "," + c + ")", r);
-                }
-
-                char kind = t.charAt(0); // A,B,E,F,N,R,S
-                // Everything (E) and Nothing (N) have no interest digit
-                switch (kind) {
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                if (sc.hasNext()) {
+                    String next = sc.next();
+                    char kind = next.charAt(0);
+                    
+                    
+                    switch (kind) {
                     case 'E': {
                         grid[r][c] = new Everything(this, r, c);
                         break;
@@ -89,10 +81,8 @@ public class NeighborhoodGrid {
                         break;
                     }
                     case 'A': case 'B': case 'F': case 'R': case 'S': {
-                        if (t.length() < 2 || !Character.isDigit(t.charAt(1))) {
-                            throw new ParseException("Missing/invalid interest for '" + kind + "' at (" + r + "," + c + "): '" + t + "'", r);
-                        }
-                        int lvl = t.charAt(1) - '0'; // expect 0–5 per spec
+
+                        int lvl = Integer.parseInt(next.substring(1)); 
                         switch (kind) {
                             case 'A':
                                 grid[r][c] = new Baseball(this, r, c, lvl);
@@ -113,13 +103,23 @@ public class NeighborhoodGrid {
                         break;
                     }
                     default:
-                        throw new ParseException("Unknown household type '" + kind + "' at (" + r + "," + c + "): '" + t + "'", r);
+                    	continue;
+                	}
+                    
                 }
             }
         }
+        sc.close();
+                
+                
+            	
+               
+                
+
+     }
+        
     
     
-    }
 
     /**
      * Constructs a NeighborhoodGrid of a specified size.
