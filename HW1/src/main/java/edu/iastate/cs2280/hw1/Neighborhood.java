@@ -48,7 +48,7 @@ public class Neighborhood {
         Scanner scan = new Scanner(System.in);
         
         int quit = 0;
-        int count = 0;
+        int count = 1;
         while(quit == 0) {
         System.out.println("Keys: 1 (random grid); 2 (file input); 3 (exit)");
         int initialInput = scan.nextInt();
@@ -62,15 +62,18 @@ public class Neighborhood {
             int numMonths = scan.nextInt();
             
         	
-        	NeighborhoodGrid neighborhoodGrid = new NeighborhoodGrid(width);
-        	neighborhoodGrid.randomInit();
+        	NeighborhoodGrid nbgrid = new NeighborhoodGrid(width);
+        	nbgrid.randomInit();
         	
-        	neighborhoodGrid.toString();
+        	System.out.println("Initial Grid: ");
+        	System.out.println(nbgrid.toString());
+        	
         	for(int i = 1; i <= numMonths; i++) {
         		NeighborhoodGrid newGrid = new NeighborhoodGrid(width);
-        		updateGrid(neighborhoodGrid, newGrid, i);
+        		updateGrid(nbgrid, newGrid, i);
         		System.out.println("Updated Grid for month " + i);
-        		neighborhoodGrid.toString();
+        		System.out.println(nbgrid.toString());
+        		
         	}
         	
         	
@@ -78,8 +81,7 @@ public class Neighborhood {
         	System.out.println("Please enter the name of your file: ");
         	String inputFileName = scan.next();
         	
-        	System.out.println("Enter grid width: "); //need to do inputmismatch + other exceptions
-        	int width = scan.nextInt();
+        	
         	
         	System.out.println("Simulation Number: " + count + " -> File Input");
         	System.out.println("Enter the number of months: ");
@@ -88,12 +90,13 @@ public class Neighborhood {
         	NeighborhoodGrid neighborhoodGrid = new NeighborhoodGrid(inputFileName);
         	
         	System.out.println("Initial Grid:");
-        	neighborhoodGrid.toString();
+        	System.out.println(neighborhoodGrid.toString());
+        	
         	for(int i = 1; i <= numMonths; i++) {
-        		NeighborhoodGrid newGrid = new NeighborhoodGrid(width);
+        		NeighborhoodGrid newGrid = new NeighborhoodGrid(neighborhoodGrid.grid.length);
         		updateGrid(neighborhoodGrid, newGrid, i);
         		System.out.println("Updated Grid for month " + i);
-        		neighborhoodGrid.toString();
+        		System.out.println(neighborhoodGrid.toString());
         	}
         	
         }else if(initialInput == 3) {

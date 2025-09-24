@@ -157,11 +157,11 @@ public class NeighborhoodGrid {
     	for(int r = 0; r < size; r++) {
     		for(int c = 0; c < size; c++) {
     			
-    			Random rand = new Random(7);
-    			Random randinterest = new Random(Household.MAX_INTEREST);
+    			Random rand = new Random();
+    			Random randinterest = new Random();
     		
-    			int pick = rand.nextInt();
-    			int lvl = rand.nextInt();
+    			int pick = rand.nextInt(7);
+    			int lvl = rand.nextInt(Household.MAX_INTEREST);
     			
     			
     			switch (pick) {
@@ -219,6 +219,7 @@ public class NeighborhoodGrid {
     		for(int c = 0; c < grid[0].length; c++) {
     			s += grid[r][c].toString();
     		}
+    		s += "\n";
     	}
     	
     	return s;

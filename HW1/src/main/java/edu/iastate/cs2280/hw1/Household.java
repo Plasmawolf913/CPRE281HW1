@@ -58,8 +58,8 @@ public abstract class Household {
     protected void survey(int households[]) {
 
     	//double for loop, check its not out the grid and continue if so, store with ordinal
-    	for(int r = row - 1; r <= row + 1; r++) {
-    		for(int c = column - 1; c <= column + 1; c++) {
+    	for(int r = 0; r < neighborhoodGrid.grid.length; r++) {
+    		for(int c = 0; c < neighborhoodGrid.grid[0].length; c++) {
     			//if outside grid then continue
     			  // skip out-of-bounds
                 if (r < 0 || r >= neighborhoodGrid.grid.length || 
