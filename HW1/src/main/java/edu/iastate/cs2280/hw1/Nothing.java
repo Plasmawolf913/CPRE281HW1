@@ -29,10 +29,10 @@ public class Nothing extends Household {
 	    }else if(households[Sports.BASEBALL.ordinal()] > 2) {
 	    	return new Baseball(neighborhoodGrid, row, column, 0);
 	    	
-	    }else if (households[Sports.RUGBY.ordinal()] > 2) {
+	    }else if (households[Sports.RUGBY.ordinal()] > 1) {
 	    	return new Rugby(neighborhoodGrid, row, column, 2);
 	    
-	    }else if (households[Sports.EVERYTHING.ordinal()] > 1) {
+	    }else if (households[Sports.EVERYTHING.ordinal()] >= 1) {
 	    	return new Everything(neighborhoodGrid, row, column);
 		    
 	    }else {

@@ -23,11 +23,13 @@ public class Football extends SportsHouseholds {
 		if(month == 4 || month == 5 || month == 6) {
 			if(households[Sports.NOTHING.ordinal()] > 1 || households[Sports.EVERYTHING.ordinal()] > 1) {
 				this.interestLevel++;
-				
+				return this;
+			}else {
+				return this;
 			}
 		}
 		
-		if(this.interestLevel >= MAX_INTEREST) {
+		else if(this.interestLevel >= MAX_INTEREST) {
 	    	return new Nothing(neighborhoodGrid, row, column);
 	    	
 	    }else if(households[Sports.BASEBALL.ordinal()] + households[Sports.BASKETBALL.ordinal()] + households[Sports.FOOTBALL.ordinal()] > 7){

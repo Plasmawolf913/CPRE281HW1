@@ -3,6 +3,7 @@ package edu.iastate.cs2280.hw1;
 import java.io.File;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.Random;
@@ -232,5 +233,17 @@ public class NeighborhoodGrid {
      * @throws FileNotFoundException
      */
     public void write(String outputFileName) throws FileNotFoundException {
+    	try (PrintWriter out = new PrintWriter(outputFileName)) {
+            for (int r = 0; r < size; r++) {
+                for (int c = 0; c < size; c++) {
+                    out.print(grid[r][c].toString());
+//                    if (c < size - 1) out.print(" "); 
+                }
+                out.println(); // newline after each row
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    
     }
 }
