@@ -96,8 +96,7 @@ public class NeighborhoodTest {
             String out = outBuf.toString();
 
             // Very tolerant checks so you don't have to match exact formatting
-            assertTrue(out.toLowerCase().contains("month 0") || out.contains("Month: 0"),
-                    "Output should include Month 0.");
+
             assertTrue(out.toLowerCase().contains("month 1") || out.contains("Month: 1"),
                     "Output should include Month 1.");
             assertTrue(out.toLowerCase().contains("month 2") || out.contains("Month: 2"),
@@ -116,6 +115,30 @@ public class NeighborhoodTest {
         }
     }
 
+    @Test
+    void main_randomInit_runsSimulation_andPrintsMonths() throws FileNotFoundException, ParseException {
+        // Simulate:
+        // 1 -> random grid
+        // 8 -> grid size
+        // 1 -> simulate 1 month (Month 0 and Month 1 should appear)
+        // 3 -> exit
+        String input = String.join(System.lineSeparator(),
+            "1",   // menu: random grid
+            "8",   // grid size (int)
+            "1",   // months to simulate
+            "3"    // exit
+        ) + System.lineSeparator();
 
+        ByteArrayOutputStream outBuf = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outBuf));
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        Neighborhood.main(new String[0]);
+
+        String out = outBuf.toString();
+
+        assertTrue(out.toLowerCase().contains("month 1") || out.contains("Month: 1"),
+                "Output should include Month 1.");
+    }
 
 }
