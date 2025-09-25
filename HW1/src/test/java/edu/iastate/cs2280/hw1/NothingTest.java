@@ -3,6 +3,12 @@ package edu.iastate.cs2280.hw1;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Nothing Tests
+ * 
+ * @author tfolkers
+ */
+
 public class NothingTest {
 
     private NeighborhoodGrid grid3() { return new NeighborhoodGrid(3); }

@@ -13,7 +13,7 @@ package edu.iastate.cs2280.hw1;
  * - RUGBY: Represents an interest in rugby.
  * - SOCCER: Represents an interest in soccer.
  *
- * @author
+ * @author tfolkers
  */
 public enum Sports {
     BASEBALL,

@@ -1,5 +1,10 @@
 package edu.iastate.cs2280.hw1;
 
+/**
+ * Baseball household class
+ * 
+ * @author tfolkers
+ */
 public class Baseball extends SportsHouseholds {
 
 	public Baseball(NeighborhoodGrid grid, int row, int column, int interestLevel) {

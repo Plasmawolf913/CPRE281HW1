@@ -3,6 +3,11 @@ package edu.iastate.cs2280.hw1;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Soccer Tests
+ * 
+ * @author tfolkers
+ */
 public class SoccerTest {
 
     private NeighborhoodGrid grid3() { return new NeighborhoodGrid(3); }

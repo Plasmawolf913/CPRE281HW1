@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Performs simulations over the neighborhood grid.
  *
- * @author
+ * @author tfolkers
  */
 public class Neighborhood {
     /**
@@ -54,7 +54,7 @@ public class Neighborhood {
         int initialInput = scan.nextInt();
         
         if(initialInput == 1) {
-        	System.out.println("Enter grid width: "); //need to do inputmismatch + other exceptions
+        	System.out.println("Enter grid width: "); 
         	int width = scan.nextInt();
             
         	System.out.println("Simulation Number: " + count + " -> Random Grid");
@@ -83,11 +83,7 @@ public class Neighborhood {
         		
         		newGrid = null;
         		
-        		
         	}
-        	
-        	
-
         	
         	
         }else if(initialInput == 2) {
@@ -125,11 +121,6 @@ public class Neighborhood {
         }else if(initialInput == 3) {
         	quit = 1;
         }
-        
-
-
-        
-        
         
         count++;
         }

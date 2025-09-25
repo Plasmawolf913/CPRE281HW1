@@ -1,5 +1,10 @@
 package edu.iastate.cs2280.hw1;
 
+/**
+ * Basketball household class
+ * 
+ * @author tfolkers
+ */
 public class Basketball extends SportsHouseholds {
 
 	

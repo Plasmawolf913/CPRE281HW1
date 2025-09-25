@@ -19,6 +19,8 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Tests for the Neighborhood driver and updateGrid().
+ * 
+ * @author tfolkers
  */
 public class NeighborhoodTest {
 

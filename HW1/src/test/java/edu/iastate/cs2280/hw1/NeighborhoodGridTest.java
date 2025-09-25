@@ -9,6 +9,8 @@ import java.util.*;
 
 /**
  * Tests for NeighborhoodGrid class.
+ * 
+ * @author tfolkers
  */
 public class NeighborhoodGridTest {
 

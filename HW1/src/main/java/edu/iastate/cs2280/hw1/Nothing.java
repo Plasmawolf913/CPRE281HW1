@@ -1,5 +1,10 @@
 package edu.iastate.cs2280.hw1;
 
+/**
+ * Nothing household class
+ * 
+ * @author tfolkers
+ */
 
 public class Nothing extends Household {
 

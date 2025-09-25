@@ -5,7 +5,7 @@ package edu.iastate.cs2280.hw1;
  * in sports. This class is designed to be extended by concrete sports-specific
  * households to define preferences and behavior.
  *
- * @author
+ * @author tfolkers
  */
 public abstract class SportsHouseholds extends Household implements InterestLevel {
     /**

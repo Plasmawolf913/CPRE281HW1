@@ -4,7 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests for Football.next() according to HW1 spec §5.4.
+ * Tests for Football.next()
+ * 
+ * @author tfolkers
  */
 public class FootballTest {
 

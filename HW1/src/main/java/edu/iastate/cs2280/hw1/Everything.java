@@ -1,6 +1,10 @@
 package edu.iastate.cs2280.hw1;
 
-
+/**
+ * Everything household class
+ * 
+ * @author tfolkers
+ */
 public class Everything extends Household {
 	
 	private NeighborhoodGrid grid;

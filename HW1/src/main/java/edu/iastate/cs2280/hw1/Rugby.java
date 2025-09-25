@@ -1,5 +1,10 @@
 package edu.iastate.cs2280.hw1;
 
+/**
+ * Rugby household class
+ * 
+ * @author tfolkers
+ */
 public class Rugby extends SportsHouseholds {
 
 	public Rugby(NeighborhoodGrid grid, int row, int column, int interestLevel) {

@@ -4,13 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests for Baseball.next() per HW1 spec §5.1:
- * 1) Max interest -> Nothing
- * 2) >3 Soccer neighbors -> Soccer(0)
- * 3) <2 Baseball neighbors -> Rugby(0)
- * 4) (Baseball + Soccer) > 5 -> Nothing
- * 5) #Football > 2 * #Baseball -> Football(0)
- * Otherwise -> interest +1, remain Baseball
+ * Tests for Baseball.next() 
+ * 
+ * @author tfolkers
  */
 public class BaseballTest {
 

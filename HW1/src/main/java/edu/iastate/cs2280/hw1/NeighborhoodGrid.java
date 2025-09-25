@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * NeighborhoodGrid refers to the households' layout for each simulation.
  * It is a square grid [size X size].
  *
- * @author
+ * @author tfolkers
  */
 public class NeighborhoodGrid {
     /**

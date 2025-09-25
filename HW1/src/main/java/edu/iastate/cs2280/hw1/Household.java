@@ -7,7 +7,7 @@ package edu.iastate.cs2280.hw1;
  * The class is intended to be extended by specific household types that define
  * concrete preferences and behaviors.
  *
- * @author
+ * @author tfolkers
  */
 public abstract class Household {
     /**

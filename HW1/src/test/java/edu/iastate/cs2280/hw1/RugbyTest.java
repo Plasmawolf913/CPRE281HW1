@@ -3,6 +3,11 @@ package edu.iastate.cs2280.hw1;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Rugby Test
+ * 
+ * @author tfolkers
+ */
 
 public class RugbyTest {
 

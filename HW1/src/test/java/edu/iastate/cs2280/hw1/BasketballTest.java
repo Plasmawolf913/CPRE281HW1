@@ -6,7 +6,8 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Unit tests for Basketball.next() rules.
- * Adapted from COMS 2280 HW1 spec (Sec. 5.2 Basketball).
+ * 
+ * @author tfolkers
  */
 public class BasketballTest {
 
