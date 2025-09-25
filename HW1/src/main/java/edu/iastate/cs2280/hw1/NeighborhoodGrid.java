@@ -241,7 +241,7 @@ public class NeighborhoodGrid {
                 }
                 out.println(); // newline after each row
             }
-        } catch (IOException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     
