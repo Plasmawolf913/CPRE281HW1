@@ -13,10 +13,7 @@ public class EverythingTest {
 
     private NeighborhoodGrid grid3() { return new NeighborhoodGrid(3); }
 
-    /* ---------------- Rule 1 ----------------
-       If #Soccer >= 3 * #Everything → Soccer(3)
-       We set E-neighbors = 1, S-neighbors = 3 (3 >= 3*1).
-       Keep F small, N >= F+S to avoid Rule 3, and R <= E to avoid Rule 4. */
+    /* ---------------- Rule 1 ------------- */
     @Test
     void soccerAtLeastTripleEverything_becomesSoccerLevel3() {
         NeighborhoodGrid g = grid3();
@@ -38,9 +35,7 @@ public class EverythingTest {
                 "Rule 1: #S >= 3*#E → Soccer with interest 3.");
     }
 
-    /* ---------------- Rule 2 ----------------
-       If #Football > 3 → Football(0)
-       Avoid Rule 1 by keeping S < 3*E (e.g., E=1, S=2), avoid Rule 3 by N >= F+S, Rule 4 by R <= E. */
+    /* ---------------- Rule 2 ---------------- */
     @Test
     void moreThanThreeFootballNeighbors_becomesFootballLevel0() {
         NeighborhoodGrid g = grid3();
@@ -62,9 +57,7 @@ public class EverythingTest {
                 "Rule 2: >3 Football neighbors → Football(0).");
     }
 
-    /* ---------------- Rule 3 ----------------
-       If #Nothing < (#Football + #Soccer) → Basketball(2)
-       Avoid Rule 1: keep S < 3*E (e.g., E=1, S=2). Avoid Rule 2: F ≤ 3. Avoid Rule 4: R ≤ E. */
+    /* ---------------- Rule 3 -------------- */
     @Test
     void nothingLessThanFootballPlusSoccer_becomesBasketballLevel2() {
         NeighborhoodGrid g = grid3();

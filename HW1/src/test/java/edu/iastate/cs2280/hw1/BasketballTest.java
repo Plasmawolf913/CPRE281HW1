@@ -33,15 +33,15 @@ public class BasketballTest {
     void basketballBecomesBaseballWithEnoughBaseballNeighbors() {
         NeighborhoodGrid g = new NeighborhoodGrid(3);
 
-        // Place Basketball center
+       
         g.grid[1][1] = new Basketball(g, 1, 1, 2);
 
-        // Surround with Baseball neighbors
+       
         g.grid[0][0] = new Soccer(g, 0, 0, 1);
         g.grid[0][1] = new Soccer(g, 0, 1, 3);
         g.grid[0][2] = new Soccer(g, 0, 2, 2);
 
-        // Fill rest with Nothing to simplify
+       
         g.grid[1][0] = new Nothing(g, 1, 0);
         g.grid[1][2] = new Nothing(g, 1, 2);
         g.grid[2][0] = new Nothing(g, 2, 0);
@@ -64,15 +64,15 @@ public class BasketballTest {
     void basketballInterestIncrementsNormally() {
     	NeighborhoodGrid g = new NeighborhoodGrid(3);
 
-        // Place Basketball center
+        
         g.grid[1][1] = new Basketball(g, 1, 1, 2);
 
-        // Surround with Baseball neighbors
+        
         g.grid[0][0] = new Basketball(g, 0, 0, 1);
         g.grid[0][1] = new Basketball(g, 0, 1, 3);
         g.grid[0][2] = new Basketball(g, 0, 2, 2);
 
-        // Fill rest with Nothing to simplify
+        
         g.grid[1][0] = new Nothing(g, 1, 0);
         g.grid[1][2] = new Nothing(g, 1, 2);
         g.grid[2][0] = new Nothing(g, 2, 0);

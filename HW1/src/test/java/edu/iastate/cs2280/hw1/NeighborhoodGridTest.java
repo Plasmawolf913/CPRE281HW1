@@ -28,48 +28,7 @@ public class NeighborhoodGridTest {
         }
     }
 
-//    @Test
-//    void constructorWithFile_parsesSquareGrid() throws Exception {
-//        // Create a 3x3 input file
-//        Path temp = Files.createTempFile("grid", ".txt");
-//        try {
-//            Files.write(temp, Arrays.asList(
-//                "B3 N F2",
-//                "S1 R0 A2",
-//                "E N B4"
-//            ));
-//
-//            NeighborhoodGrid g = new NeighborhoodGrid(temp.toString());
-//
-//            // Square size checks
-//            assertEquals(3, g.getSize(), "Grid should be 3x3.");
-//            assertEquals(3, g.grid.length, "Grid must have 3 rows.");
-//            for (int r = 0; r < g.getSize(); r++) {
-//                assertEquals(3, g.grid[r].length, "Each row must have 3 columns.");
-//            }
-//
-//            // Type & interest checks
-//            assertTrue(g.grid[0][0] instanceof Basketball);
-//            assertEquals(3, ((Basketball) g.grid[0][0]).getInterest());
-//            assertTrue(g.grid[0][1] instanceof Nothing);
-//            assertTrue(g.grid[0][2] instanceof Football);
-//            assertEquals(2, ((Football) g.grid[0][2]).getInterest());
-//
-//            assertTrue(g.grid[1][0] instanceof Soccer);
-//            assertEquals(1, ((Soccer) g.grid[1][0]).getInterest());
-//            assertTrue(g.grid[1][1] instanceof Rugby);
-//            assertEquals(0, ((Rugby) g.grid[1][1]).getInterest());
-//            assertTrue(g.grid[1][2] instanceof Baseball);
-//            assertEquals(2, ((Baseball) g.grid[1][2]).getInterest());
-//
-//            assertTrue(g.grid[2][0] instanceof Everything);
-//            assertTrue(g.grid[2][1] instanceof Nothing);
-//            assertTrue(g.grid[2][2] instanceof Basketball);
-//            assertEquals(4, ((Basketball) g.grid[2][2]).getInterest());
-//        } finally {
-//            Files.deleteIfExists(temp);
-//        }
-//    }
+
 
     /* ---------------- Method Tests ---------------- */
 
