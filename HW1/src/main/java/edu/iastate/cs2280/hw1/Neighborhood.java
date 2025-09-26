@@ -25,7 +25,7 @@ public class Neighborhood {
     	for(int r = 0; r < oldGrid.grid.length; r++) {
     		for(int c = 0; c < oldGrid.grid[0].length; c++) {
     			
-    			newGrid.grid[r][c] = oldGrid.grid[r][c].next(newGrid, currentMonth); //why pass new grid in??? maybe that happens in next()
+    			newGrid.grid[r][c] = oldGrid.grid[r][c].next(newGrid, currentMonth); 
     			
     		}
     	}
