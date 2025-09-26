@@ -58,8 +58,8 @@ public class NeighborhoodGrid {
             }
         }
         counter.close();
-
         
+        size = rows;
         
         grid = new Household[rows][cols];
         // ---------- Second pass: actually read into grid ----------
@@ -111,12 +111,6 @@ public class NeighborhoodGrid {
             }
         }
         sc.close();
-                
-                
-            	
-               
-                
-
      }
         
     
